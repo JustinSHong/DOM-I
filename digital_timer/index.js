@@ -18,7 +18,17 @@ let timer = setInterval(function() {
         msHundreds.innerHTMl = 0;
         clearInterval(timer);
     }
-
+    // when 1000 < counter < 10000
+    else if (count % 1000 === 0) {
+        secondOnes.innerHTMl++;
+        msTens.innerHTMl = 0;
+        msHundreds.innerHTMl = 0;
+    }
+    // when 100 < counter < 1000
+    else if (count % 100 === 0) {
+        msTens.innerHTMl++;
+        msHundreds.innerHTMl = 0;
+    }
 
 }, 10);
 

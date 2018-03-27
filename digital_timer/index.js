@@ -14,7 +14,7 @@ msHundreds.innerHTML = '0';
 // keeps track of time in milliseconds
 let ms = 0;
 
-const timer = setInterval(function() {
+const timer = window.setInterval(function() {
 	// increment ms by 10 for accuracy
 	ms += 10;
 	// our limit is 10seconds or 10000ms
@@ -23,10 +23,8 @@ const timer = setInterval(function() {
 		clearInterval(timer);
 	} 
 	// keep track of time up to 10000ms
-	else {
-		// change digits to keep up with ms
-		progress();
-	}
+	// change digits to keep up with ms
+	progress(ms);
 }, 10);
 
 // receives innerHTML as input
@@ -50,7 +48,7 @@ const progress = (ms) => {
 		msHundreds.innerHTML = '0';
 	}
 	// ms is greater than or equal to 0.1s
-	else if (ms % 100) {
+	else if (ms % 100 === 0) {
 		msTens.innerHTML = add(msTens.innerHTML);
 		msHundreds.innerHTML = '0';
 	}

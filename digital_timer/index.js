@@ -30,7 +30,8 @@ const timer = setInterval(function() {
 
 // receives innerHTML as input
 const increment(str) {
-
+	// update a digit in each digits place
+	return (Number(str) + 1).toString();
 }
 
 const progress = (ms) => {

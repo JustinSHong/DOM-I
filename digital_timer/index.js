@@ -12,13 +12,14 @@ msTens.innerHTML = '0';
 msHundreds.innerHTML = '0';
 
 // keeps track of time in milliseconds
-let ms = 0
+let ms = 0;
 
 const timer = setInterval(function() {
 	// increment ms by 10 for accuracy
 	ms += 10;
 	// our limit is 10seconds or 10000ms
 	if (ms === 10000) {
+		digits.style.color = 'red';
 		clearInterval(timer);
 	} 
 	// keep track of time up to 10000ms
@@ -29,7 +30,7 @@ const timer = setInterval(function() {
 }, 10);
 
 // receives innerHTML as input
-const increment(str) {
+const add = function(str) {
 	// update a digit in each digits place
 	return (Number(str) + 1).toString();
 }

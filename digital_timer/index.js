@@ -15,5 +15,15 @@ msHundreds.innerHTML = "0";
 let ms = 0
 
 let timer = setInterval(function() {
-
+	// increment ms by 10 for accuracy
+	ms += 10;
+	// our limit is 10seconds or 10000ms
+	if (ms === 10000) {
+		clearInterval(timer);
+	} 
+	// keep track of time up to 10000ms
+	else {
+		// change digits to keep up with ms
+		progress();
+	}
 }, 10);

@@ -52,6 +52,10 @@ const progress = (ms) => {
 		msTens.innerHTML = add(msTens.innerHTML);
 		msHundreds.innerHTML = '0';
 	}
+	// default case: ms is greater than or equal to 0.01s
+	else {
+		msHundreds.innerHTML = add(msHundreds.innerHTML);
+	}
 }
 
 

@@ -28,10 +28,22 @@ const timer = setInterval(function() {
 	}
 }, 10);
 
+// receives innerHTML as input
+const increment(str) {
+
+}
+
 const progress = (ms) => {
+	// ms reaches 10seconds
 	if (ms === 10000) {
 		secondTens.innerHTML = '1';
 		secondOnes.innerHTML = '0';
+		msHundreds.innerHTML = '0';
+		msTens.innerHTML = '0';
+	} 
+	// ms is greater than or equal to 1second
+	else if (ms % 1000 === 0) {
+		secondOnes.innerHTML = add(secondOnes.innerHTML);
 		msHundreds.innerHTML = '0';
 		msTens.innerHTML = '0';
 	}
